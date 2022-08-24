@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+.form-group label {
+  color: grey;
+}
+  
+.form-group input {
+  font-weight: 500;
+}
+  
+.form-group input::placeholder {
+  color: #c0bdbd;
+  font-weight: 300;
+}
+  
+thead th{
+  font-weight: 400;
+}
+  
+table tr:hover {
+  background-color: #fffbf2;
+  cursor: pointer;
+}
+  
+  /*for invalid form controls*/
+input.invalid {
+  border-color: red;
+}
+
+.error {
+  color: red;
+}
+
+span{
+  color: red;
+}
+
+
+*{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.btn-custom-submit{
+  background:  linear-gradient(180deg,#f74a4a 10%,#fd6843 80%);
+  box-shadow: 0 12px 30px -12px #f16151;
+  width: 70%;
+  border: none;
+  color: white;
+}
+
+.btn-custom-submit:hover{
+  background:  linear-gradient(180deg,#aa3333 5%,#ff6a45 95%);
+}
