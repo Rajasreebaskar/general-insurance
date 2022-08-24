@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <form class="p-3 shadow-lg" [formGroup]="claimInsuranceForm" (ngSubmit)="applyForClaim()">
+        <div class="mb-3">
+          <label for="policyNumber" class="form-label"><b>Policy Number: <span class="error">*</span> </b></label>
+          <input type="text" class="form-control" name="policyNumber" id="policyNumber" formControlName="policyNumber"
+           (input)="changeSelectReason()">
+            <div class="error" *ngIf="claimInsuranceForm.controls.policyNumber.touched && claimInsuranceForm.controls.policyNumber.invalid">
+              <span *ngIf="!claimInsuranceForm.controls.policyNumber.errors?.pattern">
+                Field cannot be empty
+              </span>         
+              <span *ngIf="claimInsuranceForm.controls.policyNumber.errors?.pattern">
+                Invalid policy number
+              </span>
+          </div>
+          
+          
+        </div>
+        <div class="mb-3">
+          <label for="contact" class="form-label"><b>Contact:<span class="error">*</span></b></label>
+          <input type="text" class="form-control" name="contact" id="contact"  formControlName="contact">
+          <div class="error" *ngIf="claimInsuranceForm.controls.contact.touched && claimInsuranceForm.controls.contact.invalid">
+            <span *ngIf="!claimInsuranceForm.controls.contact.errors?.pattern">
+              Field cannot be empty
+            </span>   
+            <span *ngIf="claimInsuranceForm.controls.contact.errors?.pattern">
+              Invalid phone number
+            </span>
+          </div>
+        </div>
+      
+        <!-- <div *ngIf="isValidPolicy"> -->
+        <label for="contact" class="form-label "><b>Reason To Claim: <span class="error">*</span></b></label>
+        <!-- <div class="" *ngIf="!isValidPolicy">
+          <h4 class="text-muted"> Enter a valid policy number</h4>
+        </div> -->
+        <div class="d-flex flex-column px-5 card py-3 mb-3 " >
+         
+            <button type="button" class="btn btn-claim-reason mb-1" [class.selectedButton]="selectedButton==i" *ngFor="let reason of selectReason;let i=index" (click)="setReason(reason,i)">
+              {{reason}}
+            </button>
+         
+        </div>
+      <!-- </div> -->
+        <div class="px-2 text-center">
+          <button class="btn btn-block btn-submit" type="submit" [disabled]="(claimInsuranceForm.invalid) || (selectedButton==-1)">Submit</button>
+        </div>
+      </form>
+      <div class="alert alert-danger alert-dismissible fade show pt-2" role="alert" *ngIf="isError">
+        <strong>Error!</strong> Not a valid Claim Raise
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

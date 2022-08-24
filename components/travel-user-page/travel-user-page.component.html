@@ -1,0 +1,141 @@
+<h1 class="display-4 text-center">Insurance Policy Details</h1>
+<div class="col-sm-12 calculatorBackground shadow-lg  rounded">
+    <table>
+        <tr>
+            <td><h3><b>Name: </b></h3></td>
+            <td><h4>{{custData.firstName + " " + custData.lastName}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Email: </b></h3></td>
+            <td><h4>{{custData.email}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Address: </b></h3></td>
+            <td><h4>{{custData.address}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Date of Birth: </b></h3></td>
+            <td><h4>{{custData.dob | date: 'dd/MM/yyyy'}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Contact: </b></h3></td>
+            <td><h4>{{custData.contact}}</h4></td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <div class="row">
+        
+            <div class="calculatorBackground shadow-lg p-4 rounded" *ngFor="let data of data.body">
+                <tr>
+                    <td>Policy Number:</td>
+                    <td >{{data.policyNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Type of Insurance:</td>
+                    <td >{{data.typeofInsurance}}</td>
+                </tr>
+                <tr>
+                    <td>Premium Amount:</td>
+                    <td >{{data.premiumAmount}}</td>
+                </tr>
+                <tr>
+                    <td ><button class="btn btn-customs-submit btn-block btn-lg" type="submit" (click)="GeneratePDF(data.contact, data.insuranceId)">Generate PDF</button></td>
+                </tr>
+                
+            </div>
+       
+        
+        
+            <div class="calculatorBackground shadow-lg p-4 rounded" *ngFor="let data of vehicledata.body">
+                <tr>
+                    <td>Policy Number:</td>
+                    <td >{{data.policyNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Type of Insurance:</td>
+                    <td >{{data.typeofInsurance}}</td>
+                </tr>
+                <tr>
+                    <td>Premium Amount:</td>
+                    <td >{{data.premiumAmount}}</td>
+                </tr>
+                <tr>
+                    <td ><button class="btn btn-customs-submit btn-block btn-lg" type="submit" (click)="GeneratePDF(data.contact, data.insuranceId)">Generate PDF</button></td>
+                </tr>
+                
+            </div>
+        
+        
+
+    </div>
+</div>
+
+<!-- <div>
+    
+</div>
+<div >
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Policy Number</th>
+                <th>Type of Insurance</th>
+                <th>Type of Travel</th>
+                <th>Type of Policy</th>
+                <th>Travel Mode</th>
+                <th>Premium Amount</th>
+                <th>Claim</th>
+            </tr>
+        </thead>
+        <tr *ngFor = "let data of data">
+            <td >{{data.policyNumber}}</td>
+            <td >{{data.typeofInsurance}}</td>
+            <td >{{data.travelType}}</td>
+            <td >{{data.policyType}}</td>
+            <td>{{data.travelMode}}</td>
+            <td >{{data.premiumAmount}}</td>
+            <td><a routerLink="/claimInsurance">Claim</a></td>
+        </tr>
+    </table>
+</div> -->
+<!-- <div >
+    <table class="details" align="center" style="border: 1px solid black;" >
+        <tr>
+            <td ><h3><b>Policy Number: </b></h3></td>
+            <td><h4>{{data.policyNumber}}</h4></td>
+        </tr>
+        
+        <tr>
+            <td><h3><b>Type of Insurance: </b></h3></td>
+            <td><h4>{{data.typeofInsurance}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Type of Travel: </b></h3></td>
+            <td><h4>{{data.travelType}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Type of Policy: </b></h3></td>
+            <td><h4>{{data.policyType}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Travel Mode: </b></h3></td>
+            <td><h4>{{data.travelMode}}</h4></td>
+        </tr>
+        <tr>
+            <td><h3><b>Premium Amount: </b></h3></td>
+            <td><h4>{{data.premiumAmount}}</h4></td>
+        </tr>
+    </table>
+    
+        
+</div>
+<div>
+    <table align="center" >
+    <table class="button-table" align="center">
+        <tr>
+            <td><input type="button" class="btn btn-primary btn-block btn-lg" value="Claim" ></td>
+            <td><input type="button" class="btn btn-primary btn-block btn-lg" value="Generate PDF" ></td>
+        </tr>
+    </table>
+    
+</div> -->

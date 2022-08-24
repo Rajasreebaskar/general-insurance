@@ -1,0 +1,66 @@
+<div class="jumbotron py-3">
+    <h2 class="display-4 text-center">Premium Calculation</h2>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 calculatorBackground shadow-lg p-4 rounded">
+        <form [formGroup]="travelPremiumCalculatorForm" (ngSubmit)=CalculatePremium()>
+          <div class="mb-3">
+            <label for="travelType" class="form-label"><b>Select Travel Type:</b></label>
+            <select class="form-select" name="travelType" id="travelType" 
+              formControlName="travelType" #travelType required>
+              <option value="Domestic" >Domestic</option>
+              <option value="International">International</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="policyType" class="form-label"><b>Select Policy Type:</b></label>
+            <select class="form-select" name="policyType" id="policyType" 
+              formControlName="policyType" #policyType required>
+              <option value="Single" >Single</option>
+              <option value="Multi">Multi</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="days" class="form-label"><b> For how many days are you planning your trip?</b></label>
+            <input type="number" class="form-control" id="days" name="days" formControlName="days" required min="8" max="180">
+            <div class="error"
+              *ngIf="travelPremiumCalculatorForm.controls.days.touched && travelPremiumCalculatorForm.controls.days.invalid">
+              <span *ngIf="!travelPremiumCalculatorForm.controls.days.dirty">
+                Field cannot be empty
+              </span>
+              <span *ngIf="travelPremiumCalculatorForm.controls.days.dirty">
+                Plan your trip between 8 to 180 days
+              </span>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="age" class="form-label"><b> Age:</b></label>
+            <input type="number" class="form-control" id="age" name="age" formControlName="age" required min="20" max="100">
+            <div class="error"
+              *ngIf="travelPremiumCalculatorForm.controls.age.touched && travelPremiumCalculatorForm.controls.age.invalid">
+              <span *ngIf="!travelPremiumCalculatorForm.controls.age.dirty">
+                Field cannot be empty
+              </span>
+              <span *ngIf="travelPremiumCalculatorForm.controls.age.dirty">
+                Enter a valid age
+              </span>
+            </div>
+          </div>
+          <div class="text-center" *ngIf="premiumAmount!=-1">
+            <div class="">
+              <b> Premium Amount:</b>
+            </div>
+            <h2 class="text-success">
+              {{premiumAmount|currency:'INR'}}
+            </h2>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-calculatePremium"
+              [disabled]="travelPremiumCalculatorForm.invalid">Calculate Premium</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

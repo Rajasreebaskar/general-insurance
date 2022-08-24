@@ -1,0 +1,17 @@
+ .details td {
+    border: 2px solid black;
+    padding: 5px;
+  }
+.button-table td{
+    padding: 10px;
+}
+.btn-customs-submit{
+  background:  linear-gradient(180deg,#f74a4a 10%,#fd6843 80%);
+  box-shadow: 0 12px 30px -12px #f16151;
+  border: none;
+  color: white;
+}
+
+.btn-customs-submit:hover{
+  background:  linear-gradient(180deg,#aa3333 5%,#ff6a45 95%);
+}

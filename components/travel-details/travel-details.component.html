@@ -1,0 +1,135 @@
+
+
+<!-- <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+
+
+
+<!-- <img src="https://www.londondolls.co.uk/wp-content/uploads/2020/05/Top-Travel-Agencies-in-London.jpg" id="bg"> -->
+<!-- Modal HTML -->
+
+
+    <div id="myModal" >
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">				
+                    <h4 class="modal-title">Travel Details</h4>
+                    
+                </div>
+                <div class="modal-body" >
+                    <div *ngIf="show1">
+                        <form [formGroup]="TravelForm" (ngSubmit)="Submit()">
+                             <table style="background: none;">
+                                    <div class="form-group">
+                                            <i class="fas fa-globe-asia"></i>
+                                         <select id="traveltype" class="form-control required-field" placeholder="Travel Type" formControlName="TravelType">
+                                            <option value="" disabled selected>Travel type</option>
+                                            <option value="Domestic"> Domestic</option>
+                                            <option value="International">International</option>
+                                         </select>
+                                         <span *ngIf= "TravelForm.controls.TravelType.invalid && TravelForm.controls.TravelType.touched"> Enter traveltype</span>
+                                     </div>
+                                   
+                                     <div class="form-group">
+                                            <i class="fas fa-plane"></i>
+                                         <select id="travelMode" class="form-control" formControlName="TravelMode">
+                                            <option value="" disabled selected>Travel Mode</option>
+                                            <option value="Airline"> Airline</option>
+                                            <option value="Train">Train</option>
+                                         </select>
+                                         <span *ngIf= "TravelForm.controls.TravelMode.invalid && TravelForm.controls.TravelMode.touched"> Enter travelMode</span>
+                                     </div>
+                                   
+                                     <div class="form-group">
+                                              <i class="fas fa-user"></i>
+                                              <input type="number" placeholder="Age" class="form-control" formControlName="Age" min="20" max="100">
+                                              <span *ngIf="TravelForm.controls.Age.invalid && (TravelForm.controls.Age.touched && TravelForm.controls.Age.dirty)"> Enter valid Age</span>
+                                              <span *ngIf="TravelForm.controls.Age.invalid && (TravelForm.controls.Age.touched && !TravelForm.controls.Age.dirty)"> Enter Age</span>
+                                     </div>
+                                    <div class="form-group">
+                                              <i class="fas fa-plane-departure"></i>
+                                              <input placeholder=" Start Date" class="form-control" type="text" onclick="(this.type='date')" id="date" formControlName="StartDate">
+                                              <span *ngIf="TravelForm.controls.StartDate.invalid && (TravelForm.controls.StartDate.touched )">Enter StartDate</span> 
+                                    </div>
+    
+                                    <div class="form-group">
+                                            <i class="fas fa-plane-arrival"></i>
+                                            <input placeholder="End Date" class="form-control" type="text" onclick="(this.type='date')" id="date" formControlName="EndDate" >
+                                            <span *ngIf="TravelForm.controls.EndDate.invalid && (TravelForm.controls.EndDate.touched && TravelForm.controls.EndDate.dirty)">Enter EndDate</span> 
+                                     </div>
+                                     <div class="form-group">
+                                           <i class="fas fa-atlas"></i>
+                                         <select class="form-control" formControlName="PolicyType">
+                                              <option value="" disabled selected>Policy Type</option>
+                                              <option value="Single">Single</option>
+                                              <option value="Multi">Multi trip</option>
+                                         </select>
+                                          <span *ngIf= "TravelForm.controls.PolicyType.invalid && TravelForm.controls.PolicyType.touched"> Enter Policytype</span>
+                                      </div>
+                                      <div class="form-group">
+                                           <input type="submit" class="btn btn-primary btn-block btn-lg" value="GetQuote" [disabled]="TravelForm.invalid"  >
+                                          
+                                        </div>
+                                
+                             </table>
+                            </form>
+                           
+                 </div>
+                    
+                       
+                    <div *ngIf="show3">
+                        
+                            <form [formGroup]="PaymentForm" (ngSubmit)="Payment()">
+                                <table>
+                                    <div class="form-group">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="text" class="form-control" placeholder="Contact"  formControlName="Contact" >
+                                        <span *ngIf="PaymentForm.controls.Contact.invalid && (PaymentForm.controls.Contact.touched && PaymentForm.controls.Contact.dirty)"> Enter valid Phone Number</span>
+                                        <span *ngIf="PaymentForm.controls.Contact.invalid && (PaymentForm.controls.Contact.touched && !PaymentForm.controls.Contact.dirty)"> Required*</span>    
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fas fa-credit-card"></i>
+                                        <input type="text" class="form-control ,required-field" placeholder="Card No"  formControlName="cardno">
+                                        <span *ngIf="PaymentForm.controls.cardno.invalid && (PaymentForm.controls.cardno.touched && PaymentForm.controls.cardno.dirty)"> Enter valid Card Number</span>
+                                        <span *ngIf="PaymentForm.controls.cardno.invalid && (PaymentForm.controls.cardno.touched && !PaymentForm.controls.cardno.dirty)"> Required*</span>    	
+                                    </div>
+                                     <div class="form-group">
+                                                <i class="fa fa-lock"></i>
+                                                <input type="password" class="form-control ,required-field" placeholder="ccv" formControlName="ccv" >	
+                                                <span *ngIf="PaymentForm.controls.ccv.invalid && (PaymentForm.controls.ccv.touched && PaymentForm.controls.ccv.dirty)"> Enter valid Phone Number</span>
+                                                <span *ngIf="PaymentForm.controls.ccv.invalid && (PaymentForm.controls.ccv.touched && !PaymentForm.controls.ccv.dirty)"> Required*</span>    
+                                     </div>
+                                     <div class="form-group">
+                                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Start Payment" [disabled]="PaymentForm.invalid" >
+                                     </div>
+                                </table>
+                            </form> 
+                    </div>
+                    
+                    <div *ngIf="show2">
+                        <form [formGroup]="TermsForm" (ngSubmit)="Pay()">
+                            <table>
+                                
+                                        Premium Amount:{{premiumAmount}}
+                                        <br>
+                                        <input type="checkbox" required formControlName="terms"><span>Terms & Conditions</span>
+                                        <input type="submit" class="btn btn-primary btn-block btn-lg" value="Make Payment" [disabled]="TermsForm.invalid"> 
+                                    
+                            </table>
+                        </form>
+                       
+                    </div>
+                </div>
+               
+               
+            </div>
+        </div>
+       
+</div>
+

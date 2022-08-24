@@ -1,0 +1,32 @@
+.accordion-button:focus{
+    box-shadow: none;
+    background-color: rgb(245, 245, 245); 
+    color: black;
+    text-decoration: none;
+}
+.faq-header{
+    background-color: #006eb3;
+    color: white;
+
+}
+.accordion-header {
+    border-bottom-color: #EDEFF0;
+    background: transparent;
+  }
+ .accordion-button:not(.collapsed) {
+    color: black;
+    background-color: rgb(245, 245, 245); 
+  }
+  
+  .accordion-button.collapsed {
+    color: black;
+
+  } 
+  .accordion-button.collapsed::after{
+    color: black;
+  }
+
+  .accordion-button{
+    color: black;
+  } 
+  

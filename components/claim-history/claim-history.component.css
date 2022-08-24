@@ -1,0 +1,15 @@
+thead {
+  padding: 20px 10px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(180deg, #799af5 10%, #5d52f3 80%);
+}
+
+
+table thead tr:hover {
+  background: linear-gradient(180deg, #799af5 10%, #5d52f3 80%);
+}
+
+* {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

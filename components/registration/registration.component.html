@@ -1,0 +1,76 @@
+<!-- <div class="jumbotron py-2">
+    <h1 class="display-5 text-center">Registration Page</h1>
+</div> -->
+<div class="row">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg m-3">
+                <div class="card-header p-4">
+                    
+                    <p class="text-white">Registration Page</p>
+                </div>
+                <div class="card-body">
+                    <div class="formDiv">
+                        <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+        
+                            <div class="form-group">
+                                <label>First Name<span class="error">*</span> </label>
+                                <input class="form-control " placeholder="First Name" name="firstName"
+                                    #firstName="ngModel" [(ngModel)]="service.formData.firstName"
+                                    required [class.invalid]="firstName.invalid &#038;&#038; firstName.touched">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name<span class="error">*</span> </label>
+                                <input class="form-control " placeholder="Last Name" name="lastName"
+                                    #lastName="ngModel" [(ngModel)]="service.formData.lastName"
+                                    required [class.invalid]="lastName.invalid &#038;&#038; lastName.touched">
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail<span class="error">*</span> </label>
+                                <input type="email" class="form-control " placeholder="E-mail" name="email"
+                                    #email="ngModel" [(ngModel)]="service.formData.email"
+                                    required [class.invalid]="email.invalid &#038;&#038; email.touched">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Date of Birth<span class="error">*</span> </label>
+                                    <input type="date" class="form-control " placeholder="dd/MM/YYYY" name="dob"
+                                        #dob="ngModel" [(ngModel)]="service.formData.dob"
+                                        required [class.invalid]="dob.invalid &#038;&#038; dob.touched">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Contact<span class="error">*</span> </label>
+                                    <input class="form-control " placeholder="Contact Number" name="contact"
+                                        #contact="ngModel" [(ngModel)]="service.formData.contact"
+                                        required maxlength="10" minlength="10" [class.invalid]="contact.invalid &#038;&#038; contact.touched">
+                                        <span class="error" *ngIf="contact.invalid && (contact.touched && contact.dirty)">Phone number must contain 10 digits</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Address <span class="error">*</span> </label>
+                                <textarea rows="3" class="form-control " placeholder="Address" name="address"
+                                    #address="ngModel" [(ngModel)]="service.formData.address"
+                                    required maxlength="255" minlength="20" [class.invalid]="address.invalid &#038;&#038; address.touched"></textarea>
+                                    <span class="error" *ngIf="address.invalid && (address.touched && address.dirty)">minimum length is 20</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Password <span class="error">*</span> </label>
+                                <input type="password" class="form-control " placeholder="Password" name="password"
+                                    #password="ngModel" [(ngModel)]="service.formData.password"
+                                    required maxlength="12" minlength="12" [class.invalid]="password.invalid &#038;&#038; password.touched">
+                                    <span class="error" *ngIf="password.invalid && (password.touched && password.dirty)">Password must be of 12 characters</span>
+                            </div>
+                            <div>
+                                <!-- <label style="color: red;">* All fields are mandatory</label> -->
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-custom-submit btn-block btn-lg text-white" type="submit" [disabled]="form.invalid"><b>Register</b></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>                     
+        </div>
+    </div>
+    
+</div>

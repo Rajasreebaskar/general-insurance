@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 d-flex justify-content-center ">
+
+      <table *ngIf="isDataAvailable" class="table table-hover text-center shadow-lg">
+        <thead class="bg-primary">
+          <tr>
+            <th>Claim ID</th>
+            <th>Date Of Submission</th>
+            <th>Approval Status</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let claim of claimHistory">
+            <td scope="row">{{claim.claimId}}</td>
+            <td>{{claim.dateOfSubmission | date:'fullDate'}}</td>
+            <td>{{claim.approvalStatus}}</td>
+            <td>{{claim.amountInsured}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-center" *ngIf="!isDataAvailable">
+        <div class="text-muted">
+          <h1>You have no claim records</h1>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

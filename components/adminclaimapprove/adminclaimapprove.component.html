@@ -1,0 +1,141 @@
+<div *ngIf="show1">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                 ClaimId
+            </th>
+            <th>
+               InsuranceId 
+            </th>
+            <th>
+                Contact
+            </th>
+            <th>
+                ReasonToClaim
+            </th>
+            <th>
+               DateOfSubmission 
+            </th>
+           
+            <th>
+                AmountInsured
+            </th>
+            <th>
+                Approve
+            </th>
+        </tr>
+        <tr *ngFor="let i of datavalues">
+            <td>{{i.claimId}}</td>
+            <td>{{i.insuranceId}}</td>
+            <td>{{i.contact}}</td>
+            <td>{{i.reasonToClaim}}</td>
+             <td>{{i.dateOfSubmission | date:'fullDate'}}</td>
+             
+             <td>{{i.amountInsured}}</td>
+            <button  (click)="onapprove(i.claimId,i.contact,i.insuranceId)">Approve</button>
+        </tr>
+    </table>
+    
+</div>
+<div *ngIf="show2">
+      <h2 style="text-align: center;">customer Details</h2>
+        <table class="table table-bordered table-striped ">
+                <tr  >
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Dob</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                </tr>
+                <tr *ngFor="let j of cusdet">
+                    <td>{{j.firstName}}</td>
+                    <td>{{j.lastName}}</td>
+                    <td>{{j.email}}</td>
+                    <td>{{j.dob}}</td>
+                    <td>{{j.contact}}</td>
+                    <td>{{j.address}}</td>
+                 </tr>
+            
+        </table>
+        <h2 style="text-align: center;"> Insurance Details</h2>
+        <div *ngIf="showtravel">
+            <table  class="table table-bordered table-striped  "  id="new">
+            
+                <tr  >
+                    <th  >InsuranceId</th>
+                    <td  *ngFor="let j of insurancedet" >{{j.insuranceId}}</td>
+                </tr>
+                <tr  >
+                    <th>PolicyNumber</th>
+                    <td *ngFor="let j of traveldet">{{j.travelPolicyNumber}}</td>
+                </tr>
+                <tr>
+                    <th>InsuranceType</th>
+                    <td *ngFor="let j of insurancedet">{{j.policyType}}</td>
+                </tr>
+                <tr>
+                    <th>TravelType</th>
+                    <td *ngFor="let j of traveldet">{{j.travelType}}</td> 
+                </tr>
+                <tr>
+                    <th>TravelMode</th>
+                    <td *ngFor="let j of traveldet">{{j.travelMode}}</td> 
+                </tr>
+                <tr>
+                    <th>PolicyType</th>
+                    <td *ngFor="let j of traveldet">{{j.policyType}}</td> 
+                </tr>
+                <tr>
+                    <th>PremiumAmount</th>
+                    <td *ngFor="let j of paymentdet">{{j.premiumAmount}}</td>
+                </tr>
+                 
+            </table>
+        </div>
+        <div *ngIf=showvehicle>
+            <table class="table table-bordered table-striped " id="new">
+                <tr>
+                     <th>InsuranceId</th>
+                     <td *ngFor="let j of insurancedet">{{j.insuranceId}}</td>
+                </tr>
+                <tr>
+                     <th>PolicyNumber</th>
+                     <td *ngFor="let j of vehicledet">{{j.vehiclePolicyNumber}}</td>
+                    
+                </tr>
+                <tr>
+                       <th>InsuranceType</th>
+                       <td *ngFor="let j of insurancedet">{{j.policyType}}</td>
+                </tr>
+                <tr>
+                        <th>Plans</th>
+                        <td *ngFor="let j of vehicledet">{{j.planType}}</td>
+                </tr>
+                <tr>
+                       <th>Plan Duration</th>
+                       <td *ngFor="let j of vehicledet">{{j.duration}}</td>
+                </tr>
+                  
+                <tr>
+                    <th>PremiumAmount</th>
+                    <td *ngFor="let j of paymentdet">{{j.premiumAmount}}</td>
+                </tr>
+            </table>
+        </div>
+        
+        <br>
+        
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-primary" style="margin:5px;" (click)="SetPayment()">Approve</button>
+
+            <button type="button" class="btn btn-warning" (click)="Reject()">Reject</button>
+        </div>
+         <br>
+         <div class="col-md-12 text-center" *ngIf="showsetbtn">
+          <span>Set Insure Amount:</span> <input style="align-items: center;" [(ngModel)]="InsureAmount">
+          <button type="button" class="btn btn-primary" (click)="Submit()">Submit</button>
+        </div>
+        <br>    
+</div>
+

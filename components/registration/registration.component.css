@@ -1,0 +1,17 @@
+label{
+    font-weight: bold;
+    color: black;
+}
+.card-header{
+    background-image: url("../../../assets/images/RegisterBackground.jpg");
+    background-size: cover;
+    border-top-left-radius:30px ;
+    border-top-right-radius:30px ;
+    font-size: 54px;
+    font-weight: 500;
+   
+}
+.card{
+    border-top-left-radius:30px ;
+    border-top-right-radius:30px ;
+}

@@ -1,0 +1,143 @@
+<!-- <div *ngIf="show1">
+<form #renewForm="ngForm" (ngSubmit)= displayDetails()>
+    <input type="text" name="contact" id="contact" [(ngModel)]="contactNo">
+    <input type="text" name="email" id="email" [(ngModel)]="email"> 
+    <button type="submit" >Submit</button>
+</form>
+</div>
+
+<div *ngIf="show2">
+    <table>
+        <tr *ngFor = "let i of renewDetails.body">
+                <td>{{i.policyNumber}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.contact}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.premiumAmount}}</td>   
+                <td><button>Renew</button></td>
+        </tr> 
+    </table>    
+</div> 
+<div class="first">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div *ngIf="show2">
+                        <div class="card-header bg-primary">
+                            <h4>Plan Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="formDiv">
+                                <form name="form" (ngSubmit)="form.valid && onSubmit() " #form="ngForm">
+                                    <div class="form-group">
+                                        <label for="product">Plan type</label>
+                                        <!--DropDownList  -->
+                                        <!-- <select class="custom-select" name="product" [(ngModel)]="vec.PlanType"
+                                            #product="ngModel" #em1="ngModel"
+                                            [ngClass]="{ 'is-invalid': form.submitted && product.invalid }"
+                                            required>
+                                            <option value="" class="text-primary font-weight-bolder">
+                                                --- Select Plan Type ---
+                                            </option>
+                                            <option *ngFor="let product of products" [value]=product.name>
+                                                {{product.name}}
+                                            </option>
+                                        </select> -->
+
+                                        <!-- Required Validation Message -->
+                                        <!-- <div *ngIf="form.submitted && product.invalid" class="text-danger">
+                                            <div *ngIf="em1.errors?.required"> Please select plan type</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="year">No of years</label> -->
+                                        <!-- DropDownList -->
+                                        <!-- <select class="custom-select" name="year" [(ngModel)]="vec.Duration"
+                                            #year="ngModel" #em1="ngModel"
+                                            [ngClass]="{ 'is-invalid': form.submitted}" required>
+                                            <option value="" class="text-primary font-weight-bolder">
+                                                --- Select Duration ---
+                                            </option>
+                                            <option *ngFor="let year of years" [value]="year.name">
+                                                {{year.name}}
+                                            </option>
+                                        </select> -->
+
+                                        <!-- Required Validation Message -->
+                                        <!-- <div *ngIf="form.submitted && year.invalid" class="text-danger">
+                                            <div *ngIf="em1.errors?.required"> Please select no of years</div>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!--PayMentForm-->
+
+<!-- <div class="first">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div *ngIf="show3">
+                        <div class="card-header bg-primary">
+                            <h4>Payment Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <form [formGroup]="PaymentForm" >
+                                <table>
+                                    <div class="form-group">
+                                        <i class="fas fa-phone"></i>
+                                        <input type="text" class="form-control" placeholder="Contact"
+                                            formControlName="Contact">
+                                        <span
+                                            *ngIf="PaymentForm.controls.Contact.invalid && (PaymentForm.controls.Contact.touched && PaymentForm.controls.Contact.dirty)">
+                                            Enter valid Phone Number</span>
+                                        <span
+                                            *ngIf="PaymentForm.controls.Contact.invalid && (PaymentForm.controls.Contact.touched && !PaymentForm.controls.Contact.dirty)">
+                                            Required*</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fas fa-credit-card"></i>
+                                        <input type="text" class="form-control ,required-field"
+                                            placeholder="Card No" formControlName="cardno">
+                                        <span
+                                            *ngIf="PaymentForm.controls.cardno.invalid && (PaymentForm.controls.cardno.touched && PaymentForm.controls.cardno.dirty)">
+                                            Enter valid Card Number</span>
+                                        <span
+                                            *ngIf="PaymentForm.controls.cardno.invalid && (PaymentForm.controls.cardno.touched && !PaymentForm.controls.cardno.dirty)">
+                                            Required*</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <i class="fa fa-lock"></i>
+                                        <input type="password" class="form-control ,required-field"
+                                            placeholder="ccv" formControlName="ccv">
+                                        <span
+                                            *ngIf="PaymentForm.controls.ccv.invalid && (PaymentForm.controls.ccv.touched && PaymentForm.controls.ccv.dirty)">
+                                            Enter valid Phone Number</span>
+                                        <span
+                                            *ngIf="PaymentForm.controls.ccv.invalid && (PaymentForm.controls.ccv.touched && !PaymentForm.controls.ccv.dirty)">
+                                            Required*</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary btn-block btn-lg"
+                                            value="Start Payment" [disabled]="PaymentForm.invalid">
+                                    </div> -->
+                                <!-- </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+

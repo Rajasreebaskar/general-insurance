@@ -1,0 +1,30 @@
+
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.btn-claim-reason{
+    border: #006eb3 1px solid;
+    color: #006eb3;
+}
+.btn-claim-reason:hover{
+    background: #006eb3 ;
+    color: white;
+}
+
+.selectedButton{
+    background: #006eb3;
+    color: white;
+}
+.btn-submit{
+ 
+   background:  linear-gradient(180deg,#f74a4a 10%,#fd6843 80%);
+    box-shadow: 0 12px 30px -12px #f16151;
+    /* width: 70%; */
+    border: none;
+    color: white;
+}
+
+.error{
+    font-size: 0.8em;
+    color: #c62829;
+}

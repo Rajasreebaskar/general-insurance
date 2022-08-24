@@ -1,0 +1,27 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.calculatorBackground{
+    background-color: white;
+}
+
+.calculator-title{
+    color: #f74a4a;
+}
+
+.btn-custom-submit{
+    background:  linear-gradient(180deg,#f74a4a 10%,#fd6843 80%);
+    box-shadow: 0 12px 30px -12px #f16151;
+    width: 70%;
+    border: none;
+    color: white;
+}
+
+.btn-custom-submit:hover{
+    background:  linear-gradient(180deg,#aa3333 10%,#ff6a45 80%);
+}
+
+.error{
+    font-size: 0.8em;
+    color: #c62829;
+}

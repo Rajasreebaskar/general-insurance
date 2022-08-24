@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6 calculatorBackground shadow-lg p-4 rounded">
+        <h3 class="calculator-title mb-3">Vehicle Insurance Premium Calculator</h3>
+        <form [formGroup]="vehiclePremiumCalculatorForm" (ngSubmit)=calculatePremium()>
+          <div class="mb-3">
+            <label for="vehicleType" class="form-label"><b>Select Vehicle Type:</b></label>
+            <select class="form-select" name="vehicleType" id="vehicleType" (change)="changeSelectModels()"
+              formControlName="vehicleType" #vehicleType>
+              <option value="Bike" >Two Wheeler</option>
+              <option value="Car">Four Wheeler</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="vehicleModel" class="form-label"><b>{{vehicleType.value}} Model:</b></label>
+            <select class="form-select" name="vehicleModel" id="vehicleModel" formControlName="vehicleModel" required>
+              <option value="0"> Select Model</option>
+              <option *ngFor="let vehicle of selectedModels" [value]="vehicle.price">{{vehicle.modelName}}</option>
+            </select>
+  
+            <div class="error"
+              *ngIf="vehiclePremiumCalculatorForm.controls.vehicleModel.touched && vehiclePremiumCalculatorForm.controls.vehicleModel.invalid">
+              <span *ngIf="vehiclePremiumCalculatorForm.controls.vehicleModel.errors?.pattern">
+                Select a {{vehicleType.value | lowercase}} model
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="vehicleAge" class="form-label"><b>{{vehicleType.value}} Age: <span class="text-muted">(in months)</span> </b></label>
+            <input type="number" class="form-control" id="carAge" name="vehicleAge" formControlName="vehicleAge" required>
+            <div class="error"
+              *ngIf="vehiclePremiumCalculatorForm.controls.vehicleAge.touched && vehiclePremiumCalculatorForm.controls.vehicleAge.invalid">
+              <span *ngIf="!vehiclePremiumCalculatorForm.controls.vehicleAge.dirty">
+                Field cannot be empty
+              </span>
+            </div>
+          </div>
+          <div class="text-center" *ngIf="premiumAmount!=-1">
+            <div class="">
+              <b> Premium Amount:</b>
+            </div>
+            <h2 class="text-success">
+              {{premiumAmount|currency:'INR'}}
+            </h2>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-lg btn-custom-submit"
+            [disabled]="vehiclePremiumCalculatorForm.invalid" >Calculate Premium</button>
+          </div>
+        </form>
+        <div class="alert alert-danger alert-dismissible fade show pt-2" role="alert" *ngIf="isError">
+          <strong>Error!</strong> Some error occurred..
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
